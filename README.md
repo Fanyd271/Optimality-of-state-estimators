@@ -47,7 +47,7 @@ This repo has one main directory with eight subdirectories, whose roles are list
   - Smatrix.m: Solve the coordinate transformation matrix $T_k=\mathcal{T}(v,L_k)$ given the direction $v$ and observer gain $L_k$. See Lemma 4.7 in the main content.
   - Support_func.m: Compute the support function $S(v;X)$.
   - SVO_opt.m: Solve $\mathbb{L}_k$ of the LTI system.
-  - zonotope.m: Generates a zonotope with G-rep $Z(c,G)=\{c+G\xi|\|\xi\|_{\infty}\leq 1\}$. This function can be utilized to generate symmetric and complicated uncertainty sets.
+  - zonotope.m: Generates a zonotope with G-rep $Z(c,G)=\lbrace c+G\xi|\|\xi\|_{\infty}\leq 1\rbrace$. This function can be utilized to generate symmetric and complicated uncertainty sets.
 
 ## Quick start
 + Run "main.m" to see the experimental result of one sampling case on the two-tank system. The numerical accuracy of the proposed algorithms is reported,

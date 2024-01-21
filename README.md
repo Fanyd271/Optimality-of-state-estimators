@@ -36,6 +36,18 @@ This repo has one main directory with eight subdirectories, whose roles are list
   The leading cause is the numerical inaccuracy of the MPT3 toolbox.
 - Systems: The parameters of the numerical systems, including the two-tank, four-tank.
 - Toolbox: Matlab functions utilized in the program.
+  - Box.m: Generates the minimal interval that encloses a given polytope $P$, i.e., $\square(P)$.
+  - Compute_SESs.m: Computes the state estimation sets (SES) $X_{k+1}^P$ and $X_{k+1}^I$ given the observer bundles $\mathbb{L}_k$ and $\mathbb{LS}_k$.
+  - IO_opt.m: Solve $\mathbb{LS}_k$ of the linear-time invariant (LTI) system.
+  - L_opt.m: Solve $\mathcal{L}(v;X_k)$ given the direction $v$ and the SES $X_k$. See Theorem 4.1 for details.
+  - mRep.m: Solve the mH-Rep and mV-rep of a given polytope. This procedure is intended to reduce the representational complexity of each intermediate polytope in the SME process.
+  - Normalize: Normalize the outward normals of the polytope ($\|h_i\|=1$) to make sure the numerical errors  of all facets are of the same scale. See Sec. V in the manuscript.
+  - Plot_sets.m: Plot the resulting SESs $X_{k+1}^M$, $X_{k+1}^P$, and $X_{k+1}^I$ of the LTI system.
+  - Select_vertices.m: Solve the vertice $P(v;X_k)$ given the direction $v$ and SES $X_k$. See Lemma 2.4 in the paper.
+  - Smatrix.m: Solve the coordinate transformation matrix $T_k=\mathcal{T}(v,L_k)$ given the direction $v$ and observer gain $L_k$. See Lemma 4.7 in the main content.
+  - Support_func.m: Compute the support function $S(v;X)$.
+  - SVO_opt.m: Solve $\mathbb{L}_k$ of the LTI system.
+  - zonotope.m: Generates a zonotope with G-rep $Z(c,G)=\{c+G\xi|\|\xi\|_{\infty}\leq 1\}$. This function can be utilized to generate symmetric and complicated uncertainty sets.
 
 ## Quick start
 + Run "main.m" to see the experimental result of one sampling case on the two-tank system. The numerical accuracy of the proposed algorithms is reported,
